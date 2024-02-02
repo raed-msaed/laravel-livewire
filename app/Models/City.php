@@ -4,8 +4,28 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\SoftDeletes;
 
 class City extends Model
 {
-    use HasFactory;
+    use HasFactory, SoftDeletes;
+
+    protected $filable = ['name', 'slug', 'country_id'];
+
+    protected $dates = ['deleted_at'];
+
+    public function setSlugAttribute($value)
+    {
+        $this->attributed['slug'] = strtoupper($value);
+    }
+
+    public function country()
+    {
+        return $this->belongsTo(Country::class);
+    }
+
+    public function users()
+    {
+        return $this->belongsTo(User::class);
+    }
 }
