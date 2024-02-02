@@ -1,0 +1,13 @@
+$ composer create-project laravel/laravel Laravel-Livewire
+$ cd Laravel-Livewire/
+$ composer require laravel/jetstream
+$ php artisan jetstream:install livewire
+$ npm install
+$ npm run build
+$code .
+$php artisan migrate
+$php artisan make:model Permission -ms --policy  /**** migration & seed ****/
+$php artisan make:model Role -ms --policy
+$php artisan make:migration create_permission_role_table --create=permission_role
+$php artisan make:model Country -ms --policy
+$php artisan make:model City -ms --policy
