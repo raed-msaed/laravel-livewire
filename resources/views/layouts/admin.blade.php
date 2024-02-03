@@ -19,11 +19,11 @@
   @livewireStyles
 </head>
 
-<body class="font-sans antialiased">
+<body class="font-sans antialiased" dir="rtl">
   <x-banner />
 
   <div class="min-h-screen bg-gray-100">
-    @include('layouts.nav.web.navigation-menu')
+    @include('layouts.nav.admin.navigation-menu')
 
     {{-- @livewire('navigation-menu') --}}
 

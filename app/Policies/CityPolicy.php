@@ -13,7 +13,7 @@ class CityPolicy
      */
     public function viewAny(User $user): bool
     {
-        //
+        return $user->hasPermission('browse_cities');
     }
 
     /**
@@ -21,7 +21,7 @@ class CityPolicy
      */
     public function view(User $user, City $city): bool
     {
-        //
+        return $user->hasPermission('read_cities');
     }
 
     /**
@@ -29,7 +29,7 @@ class CityPolicy
      */
     public function create(User $user): bool
     {
-        //
+        return $user->hasPermission('add_cities');
     }
 
     /**
@@ -37,7 +37,7 @@ class CityPolicy
      */
     public function update(User $user, City $city): bool
     {
-        //
+        return $user->hasPermission('edit_cities');
     }
 
     /**
@@ -45,7 +45,7 @@ class CityPolicy
      */
     public function delete(User $user, City $city): bool
     {
-        //
+        return $user->hasPermission('delete_cities');
     }
 
     /**
@@ -53,7 +53,7 @@ class CityPolicy
      */
     public function restore(User $user, City $city): bool
     {
-        //
+        return $user->hasPermission('restore_cities');
     }
 
     /**
@@ -61,6 +61,6 @@ class CityPolicy
      */
     public function forceDelete(User $user, City $city): bool
     {
-        //
+        return $user->hasPermission('forceDelete_cities');
     }
 }
