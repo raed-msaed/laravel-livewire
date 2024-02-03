@@ -66,11 +66,13 @@ class User extends Authenticatable
         'profile_photo_url',
     ];
 
-    protected $dates = ['deleted_at'];
+    protected $dates = [
+        'deleted_at'
+    ];
 
     public function setUsernameAttribute($value)
     {
-        $this->attributed['username'] = strtoupper($value);
+        $this->attributes['username'] = strtoupper($value);
     }
 
     public function role()

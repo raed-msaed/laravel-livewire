@@ -12,7 +12,9 @@ class Permission extends Model
 
     protected $filable = ['name', 'key', 'table_name'];
 
-    protected $dates = ['deleted_at'];
+    protected $dates = [
+        'deleted_at'
+    ];
 
     public function role()
     {

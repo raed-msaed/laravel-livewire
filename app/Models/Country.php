@@ -12,16 +12,18 @@ class Country extends Model
 
     protected $filable = ['name', 'slug', 'iso3'];
 
-    protected $dates = ['deleted_at'];
+    protected $dates = [
+        'deleted_at'
+    ];
 
     public function setSlugAttribute($value)
     {
-        $this->attributed['slug'] = strtoupper($value);
+        $this->attributes['slug'] = strtoupper($value);
     }
 
     public function setIso3Attribute($value)
     {
-        $this->attributed['iso3'] = strtoupper($value);
+        $this->attributes['iso3'] = strtoupper($value);
     }
 
     public function cities()

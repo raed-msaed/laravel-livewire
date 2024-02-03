@@ -19,3 +19,8 @@ $ composer install
 $ cp .env.example .env
 $ php artisan key:generate
 $ php artisan migrate
+php artisan migrate:fresh  --> Dropping all tables
+npm install
+npm run dev
+php artisan serve
+php artisan make:seeder UserSeeder

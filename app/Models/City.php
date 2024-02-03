@@ -12,11 +12,13 @@ class City extends Model
 
     protected $filable = ['name', 'slug', 'country_id'];
 
-    protected $dates = ['deleted_at'];
+    protected $dates = [
+        'deleted_at'
+    ];
 
     public function setSlugAttribute($value)
     {
-        $this->attributed['slug'] = strtoupper($value);
+        $this->attributes['slug'] = strtoupper($value);
     }
 
     public function country()
