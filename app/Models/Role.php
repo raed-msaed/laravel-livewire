@@ -10,6 +10,8 @@ class Role extends Model
 {
     use HasFactory, SoftDeletes;
 
+    protected $fillable = ['name' , 'key' , 'color'];
+
     protected $filable = [
         'deleted_at'
     ];
