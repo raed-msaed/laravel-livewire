@@ -71,7 +71,7 @@
         @endif --}}
 
         <!-- Settings Dropdown -->
-        <div class="ms-3 relative">
+        <div class="ltr:ml-3 rtl:mr-3 relative">
           <x-dropdown align="right" width="48">
             <x-slot name="trigger">
               @if (Laravel\Jetstream\Jetstream::managesProfilePhotos())
@@ -128,7 +128,8 @@
       </div>
 
       <!-- Hamburger -->
-      <div class="-me-2 flex items-center sm:hidden">
+      <div class="ltr:-mr-2 rtl:-ml-2 flex items-center sm:hidden">
+        <x-button-dark-mode />
         <button @click="open = ! open"
           class="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:bg-gray-100 focus:text-gray-500 transition duration-150 ease-in-out">
           <svg class="h-6 w-6" stroke="currentColor" fill="none" viewBox="0 0 24 24">

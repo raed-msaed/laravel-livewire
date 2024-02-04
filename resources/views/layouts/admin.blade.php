@@ -1,5 +1,6 @@
 <!DOCTYPE html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
+<html lang="{{ str_replace('_', '-', app()->getLocale()) }}" x-cloak x-data="{ darkMode: localStorage.getItem('dark') === 'true' }" x-init="$watch('darkMode', val => localStorage.setItem('dark', val))"
+  x-bind:class="{ 'dark': darkMode }">
 
 <head>
   <meta charset="utf-8">
@@ -16,6 +17,11 @@
   @vite(['resources/css/app.css', 'resources/js/app.js'])
 
   <!-- Styles -->
+  <style>
+    [x-cloak] {
+      display: none !important;
+    }
+  </style>
   @livewireStyles
 </head>
 

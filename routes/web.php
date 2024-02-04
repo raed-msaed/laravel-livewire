@@ -1,6 +1,7 @@
 <?php
 
 use App\Livewire\Admin\Admin\AdminIndex;
+use App\Livewire\Admin\User\UserIndex;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -30,4 +31,5 @@ Route::middleware([
 
 Route::middleware(['auth', 'admin'])->prefix('admin')->as('admin')->group(function () {
     Route::get('/', AdminIndex::class)->name('index');
+    Route::get('/user', UserIndex::class)->name('userindex');
 });
